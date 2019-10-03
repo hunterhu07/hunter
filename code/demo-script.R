@@ -11,4 +11,6 @@
 library(dplyr)    # data wrangling
 library(ggplot2)  # graphics
 
-
+nba <- read.csv("nba2018-players.csv", sep = ",")
+warriors <- arrange(filter(nba,team=="GSW"),salary)
+write.csv(warriors,file = "../data/warriors.csv",row.names = FALSE)
